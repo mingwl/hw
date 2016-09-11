@@ -2,6 +2,8 @@ package ming.wl.helloWorld;
 
 import java.security.MessageDigest;
 
+import org.apache.commons.codec.binary.Hex;
+
 public class TestSHA256 {
 
 	public static void main(String[] args) {
@@ -15,6 +17,13 @@ public class TestSHA256 {
         	hexString.append(String.format("%02x", 0XFF & i));
         }
         System.out.println(hexString);
+        
+        String hex = Hex.encodeHexString(hash);
+        System.out.println(hex);
+        
+        byte[] hash2 = Hex.decodeHex(hex.toCharArray());
+        System.out.println(Hex.encodeHex(hash2));
+        
     } catch (Exception e) {
         e.printStackTrace();
     }
