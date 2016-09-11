@@ -3,6 +3,7 @@ package ming.wl.helloWorld;
 import java.security.MessageDigest;
 
 import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class SHAHashingExample {
 
@@ -36,5 +37,9 @@ public class SHAHashingExample {
 		System.out.println("Hex format 3.1 : " + hex3);
 		byte[] byte3 = Hex.decodeHex(hex3.toCharArray());
 		System.out.println("Hex format 3.2 : " + Hex.encodeHexString(byte3));
+		
+		// apache commons codec
+		String hex5 = DigestUtils.sha256Hex("A");
+		System.out.println("Hex format 5.0 : " + hex5);
 	}
 }
