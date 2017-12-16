@@ -9,6 +9,9 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.joda.time.DateTime;
+
+import ming.wl.ty.tool.constant.CharCode;
 
 public class SHAHashingExample {
 
@@ -53,7 +56,7 @@ public class SHAHashingExample {
 
 		// clientid
 		UUID salt = UUID.fromString("029afe42-d8e7-11e2-aca1-50e549c9b611");
-		String passwordToCheck = "812aa200c0912c9ea24bd76d790597bf5214837f3734cc0a47a73d2c39fe53d67aad4ad95da6207bdd8d9745fb8bb82ce6f65ea4b3d318fa0e70fcd6587c7412";
+		String passwordToCheck = "aaa";
 		String saltedPasswordToCheck = new StringBuilder(salt.toString()).append(passwordToCheck).toString();
 		String hashedSaltedPasswordToCheck = DigestUtils.sha512Hex(saltedPasswordToCheck);
 		System.out.println("salt : " + salt);
@@ -61,14 +64,27 @@ public class SHAHashingExample {
 		System.out.println("saltedPasswordToCheck : " + saltedPasswordToCheck);
 		System.out.println("hashedSaltedPasswordToCheck : " + hashedSaltedPasswordToCheck);
 
-		String newPassword = "passw@rd密码４";
+		String newPassword = "qqqqqq";
 		String hashedPasswordToCheck = DigestUtils.sha512Hex(newPassword);
 		System.out.println("newPassword : " + newPassword);
 		System.out.println("hashedPasswordToCheck : " + hashedPasswordToCheck);
 
+		System.out.println("1 : " + UUID.randomUUID().toString());
+		System.out.println("2 : " + UUID.randomUUID().toString());
+		System.out.println("3 : " + UUID.randomUUID().toString());
+		System.out.println("4 : " + UUID.randomUUID().toString());
+		System.out.println("5 : " + UUID.randomUUID().toString());
+		System.out.println("6 : " + UUID.randomUUID().toString());
+		System.out.println("7 : " + UUID.randomUUID().toString());
+		System.out.println("8 : " + UUID.randomUUID().toString());
+
 		List<String> aaa = new ArrayList<>();
 		aaa.add("a");
 		aaa.add("b");
-		System.out.println(StringUtils.join(aaa, StringUtils.SPACE));
+		System.out.println(StringUtils.join(aaa, CharCode.COMMA.getValueAsString()));
+
+		System.out.println("asd: " + 10 * 100 / 10);
+
+		System.out.println(new DateTime());
 	}
 }
