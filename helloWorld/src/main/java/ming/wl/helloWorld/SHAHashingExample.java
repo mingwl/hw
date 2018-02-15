@@ -58,7 +58,7 @@ public class SHAHashingExample {
 		UUID salt = UUID.fromString("029afe42-d8e7-11e2-aca1-50e549c9b611");
 		String passwordToCheck = "aaa";
 		String saltedPasswordToCheck = new StringBuilder(salt.toString()).append(passwordToCheck).toString();
-		String hashedSaltedPasswordToCheck = DigestUtils.sha512Hex(saltedPasswordToCheck);
+		String hashedSaltedPasswordToCheck = DigestUtils.sha512Hex(Integer.toString(1));
 		System.out.println("salt : " + salt);
 		System.out.println("passwordToCheck : " + passwordToCheck);
 		System.out.println("saltedPasswordToCheck : " + saltedPasswordToCheck);
